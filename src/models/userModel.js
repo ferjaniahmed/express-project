@@ -5,7 +5,9 @@ export const userSchema = new mongoose.Schema({
     lastname : {type : String , require : true},
     email : {type : String , require : true},
     password : {type : String , require : true},
-    isAdmin : {type : Boolean , require : true}
+    isAdmin : {type : Boolean , require : true , default : false},
+    phone : { type: String  , default : ""},
+    payment_token : {type : String , default : ""}
 })
 
 

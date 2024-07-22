@@ -1,7 +1,6 @@
 
 import { Router } from "express"
 import { createUser, deleteUser, findAllUser, findOne, updateUser } from "../services/userService.js"
-import passport from "passport"
 export const userRouter = Router()
 
 userRouter.get("/api/users" , async (req , res)=>{

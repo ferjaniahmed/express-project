@@ -7,21 +7,20 @@ export const paymentRouter = Router()
 
 
 paymentRouter.post("/api/payments" , async (req , res)=>{
-  const data = req.body
+  const {user , ...data }= req.body
+  console.log(data)
   const payment = await createPayment(data)
-  if(!payment.status ){
+  
+  if(payment === null){
     res.status(401).send({
       detail: "Invalid token."
       })
-      io.emit("notification" , {
-        detail: "Invalid token."
-        })
   }else{
     io.emit("notification" , payment)
     await NotificationModel.create(
       { status : payment.status , 
         message : payment.message , 
-        user : data.user ,
+        user : user ,
         payment_token : payment.data.token
       })
     res.status(200).send({status : payment.status , message : payment.message , code : payment.code })

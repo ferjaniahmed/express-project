@@ -1,6 +1,6 @@
 const pay ={
 
-  "amount": 220.25,
+  "amount": 2.25,
   "note": "Order #123",
   "first_name": "John",
   "last_name": "Doe",
