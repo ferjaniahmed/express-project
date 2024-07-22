@@ -1,6 +1,5 @@
 # Express.js using JS
-
-    this project for Yopex summer interShip challenge
+To run it, do it :
 
 ```
     npm install
