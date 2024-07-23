@@ -7,7 +7,8 @@ export const userSchema = new mongoose.Schema({
     password : {type : String , require : true},
     isAdmin : {type : Boolean , require : true , default : false},
     phone : { type: String  , default : ""},
-    payment_token : {type : String , default : ""}
+    payment_token : {type : String , default : ""},
+    compte_code : {type : String , require : true}
 })
 
 
